@@ -27,11 +27,11 @@ public class RequestBodyJsonServlet extends HttpServlet {
 
         System.out.println("messageBody = " + messageBody);
 
-        HelloData helloData = objectMapper.readValue(messageBody,
-                HelloData.class);
+        HelloData helloData = objectMapper.readValue(messageBody,HelloData.class);
 
-        System.out.println("helloData.getName() = " + helloData.getName());
+        System.out.println("helloData.getName() = " + helloData.getUsername());
         System.out.println("helloData = " + helloData.getAge());
+
         response.getWriter().write("ok");
     }
 }
