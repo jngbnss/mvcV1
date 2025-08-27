@@ -21,12 +21,9 @@ public class FrontControllerServletV3 extends HttpServlet {
     private Map<String,ControllerV3> controllerMap = new HashMap<>();
 
     public FrontControllerServletV3() {
-        controllerMap.put("/front-controller/v3/members/new-form", new
-                MemberFormControllerV3());
-        controllerMap.put("/front-controller/v3/members/save", new
-                MemberSaveControllerV3());
-        controllerMap.put("/front-controller/v3/members", new
-                MemberListControllerV3());
+        controllerMap.put("/front-controller/v3/members/new-form", new MemberFormControllerV3());
+        controllerMap.put("/front-controller/v3/members/save", new MemberSaveControllerV3());
+        controllerMap.put("/front-controller/v3/members", new MemberListControllerV3());
     }
 
     @Override
@@ -39,6 +36,7 @@ public class FrontControllerServletV3 extends HttpServlet {
             return;
         }
         Map<String, String> paramMap = createParamMap(request);
+
         ModelView mv = controller.process(paramMap);
 
         String viewName = mv.getViewName();
