@@ -1,6 +1,5 @@
 package hello.servletV1.domain.member;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
